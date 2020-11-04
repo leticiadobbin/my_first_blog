@@ -8,16 +8,15 @@
             <h1><a href="/">Blog da Leticia</a></h1>
         </div>
 
+        {% for post in posts %}
         <div>
-            <h2><a href="">post 1. </a></h2>
-            <p>publicado: 28.10.20, 16:26</p>
-            <p>Primeiro post que eu to fazendo, aula ProgramaMenina. </p>
-        </div>
+            <h2><a href="">{{ post.title }}</a></h2>
+            <p>published: {{ post.published_date }}</p>
+            <p>{{ post.text|linebreaksbr }}</p>
+        <div>
 
-        <div>
-            <h2><a href="">post 2.</a></h2>
-            <p>publicado: 28.10.20, 16:28</p>
-            <p>Segundo post do blog, aprendendo sobre html.</p>
-        </div>
+        {% endfor %}
+
     </body>
+
 </html>
